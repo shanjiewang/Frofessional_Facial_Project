@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* 隱藏橫向卷軸 */
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url(../imgHt/ffff.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.topColor{
+    color:#4f2700
+}
+
+#padding1{
+    margin: 10px 10px 10px 10px;
+    float: right;
+}
+
+/* 回傳小的5個眼距圖片分隔 */
+#acard{
+    margin: 30px;
+}
+
+.width1{
+    margin-left:100px;
+}
+
+.h1card{
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.bgColor1{
+    background-color: rgb(236, 215, 146,0.5);
+    /* opacity: 0.2; */
+}
+
+#inputB{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+#imgboxB{
+    width:600px;
+    height:600px;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    border:5px rgb(53, 1, 243) dotted;   /* 外框 */
+    max-width: 100%;
+    max-height: 700px;
+    text-align: center;
+    display: flex;            /*使裡面的元素垂直置中*/
+    align-items: center;
+}
+
+/* 回傳包住2個大的眼距圖片分隔 */
+#imgboxC{
+    height:300px;
+    margin:0px auto;
+    margin-bottom: 100px;
+    padding: 10px 10px 10px 10px;
+    max-width: 100%;
+    max-height: 700px;
+    text-align: center;
+    display: flex;           
+    align-items: center;  
+    width: 100%;
+}
+
+.imgB{
+    width:auto;
+    height:auto;
+    max-width: 100%;
+    max-height: 700px;
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0);
+}
+
+.imgF{
+     width:auto; 
+    height:auto;
+     max-width: 100%;
+    max-height: 100%;  
+    display: inline-block;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.Bradius{
+    border-radius: 0.5rem;
+}
+
+#imgC{
+    width:300px;
+    height:300px;
+    margin: 5px 5px 5px 5px;
+    max-width: 100%;
+    max-height: 700px;
+    display: inline-block;
+}
+
+.form-control1 {
+    display: block;
+   width: 100%;
+    padding: 0.375rem 0.75rem;
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1.5;
+  color: #212529; 
+   background-color: #fff;
+   background-clip: padding-box; 
+   border: 0.125rem solid #ced4da;
+   -webkit-appearance: none;
+      -moz-appearance: none;
+           appearance: none;
+   border-radius: 0.75rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+ }
+
+ .form-control-lg1 {
+    min-height: calc(1.5em + 1.25rem);
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.75rem;
+}
+
+.form-control-lg1::-webkit-file-upload-button {
+  padding: 0.5rem 1rem;
+  margin: -0.5rem -1rem;
+  -webkit-margin-end: 1rem;
+    margin-inline-end: 1rem;
+    border-radius: 0.75rem;
+}
+
+.col-666 {
+    flex: 0 0 auto;
+    width: 80%;
+  }
+
+.vertical1{
+    align-self: center;
+  }
+
+.mm{
+    margin-top: 20px;
+  }
+.cc{
+    color: #fff;
+}  
+
+.card666 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box; 
+    border: 0.125rem solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem;
+  }
+
+  .width666{
+   /*width:400px; 
+     height:400px; */
+     max-width: 700px;
+    max-height: 700px;  
+    min-width: 100px;
+    min-height: 100px;
+  }
+
+  .bg-light666 {
+    --bs-bg-opacity: 1;
+    background-color: rgb(226, 241, 253,0.3) !important;
+  }
+
+  /* 虛線效果 */
+  .div666{
+    width:200px;
+    height:3px;
+    background:repeating-linear-gradient(90deg, 
+        #000 0, #000 8px, 
+        transparent 8px, transparent 10px, 
+        #000 10px, #000 12px,
+        transparent 12px, transparent 20px
+        );
+}
+
+.p-33333 {
+    padding: 1rem !important;
+  }
+
+  .card-title666 {
+    margin-bottom: 0.5rem;
+    text-align:center;
+  }
+
+  .font666{
+    font-size: 25px;
+    font-weight: bolder;
+  }
+
+  .font555{
+    font-weight: bolder;
+  }
+
+  .select666{
+      width:200px;
+      margin: auto;
+  }
+
+  .btn666{
+    width:200px;
+    height:200px;
+  }

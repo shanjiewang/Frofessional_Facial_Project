@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% block title %}預測結果{% endblock title %}</title>
+    {% block scripts %}
+    {% include "_scriptsF.html" %}
+    {% endblock scripts %}
+    {% block styles %}
+    {% include "_stylesF.html" %}
+    {% endblock styles %}
+    <style>
+        /* *{
+            box-sizing: content-box;
+            margin: 0px;
+            padding: 0px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Navigation-->
+    {% block types_top %}
+    {% include "types_top.html" %}
+    {% endblock types_top %}
+    <!-- About Section-->
+    <section class="bgColor1" id="aaa">
+        <!-- section = page-section bgColor1 mb-0 -->
+        <header class="masthead text-center">
+            <h2 class="page-section-heading text-center text-uppercase text-white">Result Type</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-bell" aria-hidden="true"></i></div>
+                <div class="divider-custom-line"></div>
+            </div><br>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-1 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="card p-3 border bg-light">
+                            <img src="{{ src }}" class="imgF p-3 border bg-light Bradius" alt="...">
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card p-3 border bg-light">
+                            <p>
+                            <h2 class="text-uppercase col-666 mx-auto display-4 text-center">{{ yourName }}～ <br>
+                                <p> {{ predictTypes }}
+                            </h2>
+                        </div>
+                        <p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <br>
+            <div class="text-center mt-4">
+                <a class="btn btn-xl btn-outline-light" href="#bbb">
+                    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    查看更多資訊
+                </a>
+            </div>
+            <!--             
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                <tr>
+                    <th colspan="2">The table header</th>
+                </tr>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in data %} 
+                <tr>
+                    <td scope="row">
+                        {{ record[0] }}
+                    </td>
+                    <td scope="row">
+                        {{ record[1] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> -->
+            <p class='cc'>------------------------------------------------------------------------</p>
+    </section>
+    <section class="bgColor1" id="bbb"><br><br><br><br>
+        {% if sameTypes=='YES' %}
+        {% include "resultSame.html" %}
+        {% else %}
+        {% include "resultNoSame.html" %}
+        {% endif %}
+
+        <br> <br>
+        <div class="text-center mt-4 padding1">
+            <a class="btn btn-xl btn-outline-light" href="uploadPhoto">
+                <i class="fas fa-download me-2"></i>
+                再測一次
+            </a>
+            <a class="btn btn-xl btn-outline-light" href="#aaa">
+                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                回到最上層
+            </a>
+        </div>
+        <br><br><br>
+        </header>
+    </section>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; BDSE2204 2022</small></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="./static/js/scriptsF.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% block title %}選擇照片{% endblock title %}</title>
+    {% block scripts %}
+    {% include "_scriptsF.html" %}
+    {% endblock scripts %}
+    {% block styles %}
+    {% include "_stylesF.html" %}
+    {% endblock styles %}
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">  -->
+</head>
+
+<body>
+    <!-- Navigation-->
+    {% block types_top %}
+    {% include "types_top.html" %}
+    {% endblock types_top %}
+
+    <header class="masthead text-light text-center">
+        <!--bgColor1  -->
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="static/imgHt/ddddd2.png" alt="..." />
+            <!-- Masthead Heading-->
+            <!-- <h1 class="masthead-heading text-uppercase mb-0">歡迎來到面相測驗</h1> -->
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-camera-retro fa-2x"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <!-- Masthead Subheading-->
+
+            <!-- <p >test..</p> -->
+            <form method="POST" action="/resultPhoto" enctype="multipart/form-data">
+                <div class="font666">
+                    <label><i class="fa fa-user-circle" aria-hidden="true"></i> 請輸入您的暱稱 <i class="fa fa-user-circle"
+                            aria-hidden="true"></i></label>
+                </div>
+                <p>
+                <div> <input class="form-control1 form-control-lg1" type="text" name="yourName" required> </div>
+                <br><br>
+                <div class="font666">
+                    <label><i class="fa fa-question-circle" aria-hidden="true"></i> 請選擇你想成為的類型 <i
+                            class="fa fa-question-circle" aria-hidden="true"></i></label>
+                </div>
+                <p>
+                <div class="select666">
+                    <select name="yourLikeTypes" type="yourLikeTypes" value="boss">
+                        <option value="boss" selected>企業家</option>
+                        <option value="doctor">醫師</option>
+                        <option value="politician">政治家</option>
+                        <option value="entertainer">藝人</option>
+                        <option value="sport">運動員</option>
+                        <option value="ordinary_people">平凡人</option>
+                    </select>
+                </div><br><br>
+
+                <div id="inputB ">
+                    <label for="formFileLg" class="form-label">
+                        <p class="font666"><i class="fa fa-folder" aria-hidden="true"></i> 請上傳五官清晰的正臉個人照片<i
+                                class="fa fa-folder" aria-hidden="true"></i></p>
+                        <p class="font555">( 限 .jpg、.png、.gif、.jpeg、.pdf、.heic 等圖檔 )</p>
+                    </label>
+                    <input accept=".pdf, .png, .jpg, .jpeg, .gif, .heic" id="fu" class="form-control1 form-control-lg1"
+                        type="file" name="file" value='' onchange="checkfile(this)" required>
+                    <br><br>
+                    <p>
+                        <button type="submit" class="btn btn-secondary font666">
+                            <i class="far fa-hand-point-right" aria-hidden="true"></i> Submit <i
+                                class="far fa-hand-point-left" aria-hidden="true"></i>
+                        </button>
+                        <!-- {% if noface=='noface' %}
+
+                    <button type="submit" class="btn btn-primary" onclick="myFunction()">Submit</button>
+                    <label for="formFileLg" class="form-label">沒臉</label> 
+                    <script>
+                        function myFunction() {
+                            alert("很抱歉!!你上傳的照片沒有五官~無法幫您預測類型~請上傳五官清晰的照片!!");
+                        }
+                    </script>
+                {% elif noface=='haveface' %}
+                   <button type="submit1" class="btn btn-primary" onclick="myFunction1()">Submit</button>
+                        
+                        <script>
+                            function myFunction1() {
+                                alert("準備開始測驗囉!!");
+                            }
+                        </script>
+                {% else %} 
+                <label for="formFileLg" class="form-label">有臉</label> 
+                   
+                {% endif %}-->
+                </div>
+                <script type="text/javascript" language="javascript">
+                    function checkfile(sender) {
+
+                        // 可接受的附檔名
+                        var validExts = new Array(".pdf", ".png", ".jpg", ".jpeg", ".gif", ".heic", ".PDF", ".PNG", ".JPG", ".JPEG", ".GIF", ".HEIC");
+                        var fileExt = sender.value;
+
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                            alert("檔案類型錯誤!! 可接受的副檔名有：" + validExts.toString());
+                            sender.value = null;
+                            return false;
+                        }
+                        else return true;
+                    }
+
+                </script>
+                <!-- <div class="text-center mt-4">
+                <a class="btn btn-xl btn-outline-light" href="resultPhoto">
+                    <i class="fas fa-download me-2"></i>
+                    開始測驗
+                </a>
+              </div> -->
+            </form>
+    </header>
+
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; BDSE2204 2022</small></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="./static/js/scriptsF.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

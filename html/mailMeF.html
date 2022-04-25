@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% block title %}聯絡我們{% endblock title %}</title>
+    {% block scripts %}
+    {% include "_scriptsF.html" %}
+    {% endblock scripts %}
+    {% block styles %}
+    {% include "_stylesF.html" %}
+    {% endblock styles %}
+</head>
+<body>
+            <!-- Navigation-->
+            {% block types_top %}
+            {% include "types_top.html" %}
+            {% endblock types_top %}
+    <!-- <section class="page-section " id="contact"> -->
+        <header class="page-section masthead text-white text-center" id="contact">
+            <from  method="post">
+        <div class="container ">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">contact us</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-envelope-open" aria-hidden="true"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- 寄件者姓名    -->
+                        <div class="form-floating mb-3">
+                            <input id="nameText" type="text" name="Name" class="form-control" type="text" placeholder="Enter your name..." data-sb-validations="required,email"/>
+                            <label for="name">您的姓名</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <!-- 寄件者email -->
+                        <div class="form-floating mb-3">
+                            <input id="emailText" type="email" name="Email" class="form-control" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <label for="email">您的Email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                         </div>
+                        <!-- 郵件主旨 -->
+                        <div class="form-floating mb-3">
+                            <input id="subText" type="text" name="Subject" class="form-control" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <label for="email">郵件主旨</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                         <!-- 郵件內容 -->
+                        <div class="form-floating mb-3">
+                            <textarea id="bodyText" name="your-message" class="form-control" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <label for="message">郵件內容</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        </div>
+                        <!-- 傳送按鈕 -->
+                        <!-- <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div> -->
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div> -->
+                        <!-- Submit Button-->
+                        <!-- <button id="submitButton" type="button" value="送出訊息" onclick="submitHandler();">Send</button> -->
+                        <div>
+                             <input style="width:200px;height:60px;color:#0200A0" id="submitButton" type="button" width="200" height="50" value="送出訊息" onclick="submitHandler();"> <!--type="image" -->
+                            <a id="mailTo"></a>
+                        </div>
+
+                        <!-- <input class="text-center mt-4 btn btn-xl btn-outline-light" value="送出訊息" onclick="submitHandler();">
+                            <a id="mailTo">
+                                送出
+                            </a> -->
+                    </form>
+
+                    <script>
+                        //宣告預設表單內容為空 （你想要的話也可以加東西）
+                            var initSubject='',initBody='';
+                        
+                            //按下傳送按鈕後執行
+                            function submitHandler(){
+                                var to = "bdse2204@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+                                var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+                                var email = emailText.value;
+                                var subject = subText.value;
+                        //把user填的資料都塞到 mail body 中
+                                var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
+                                    body += "From："+nameText.value+'%0A';
+                                    body += "Email："+emailText.value+'%0A';
+                        //傳送的主要程式碼
+                                mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+                                mailTo.click();
+                            }
+                        //在body onload
+                            function init(){
+                                subText.value=initSubject;
+                                toText.value=initTo;
+                                bodyText.value=initBody;
+                            }
+                        </script>
+                </div>
+            </div>
+        </div>
+    </from>
+    </header>
+    <!-- </section> -->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; BDSE2204 2022</small></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script> 
+    <script src="./static/js/scriptsF.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

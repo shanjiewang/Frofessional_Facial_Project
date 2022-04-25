@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %}111111111111{% endblock title %}</title>
+        {% block scripts %}
+        {% include "_scriptsF.html" %}
+        {% endblock scripts %}
+        {% block styles %}
+        {% include "_stylesF.html" %}
+        {% endblock styles %}
+
+    </head>
+    <body id="page-top">
+      <!-- Navigation-->
+      {% block types_top %}
+      {% include "types_top.html" %}
+      {% endblock types_top %}
+      <!-- Masthead-->
+      {% block container %}
+      {% include "indexF.html" %}
+      {% endblock container %}
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; BDSE2204 2022</small></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% block title %}關於我們{% endblock title %}</title>
+    {% block scripts %}
+    {% include "_scriptsF.html" %}
+    {% endblock scripts %}
+    {% block styles %}
+    {% include "_stylesF.html" %}
+    {% endblock styles %}
+    <style>
+        /* *{
+            box-sizing: content-box;
+            margin: 0px;
+            padding: 0px;
+        } */   
+    </style>
+</head>
+<body>
+            <!-- Navigation-->
+            {% block types_top %}
+            {% include "types_top.html" %}
+            {% endblock types_top %}
+     <!-- About Section-->
+     <section class="page-section bgColor1 mb-0" id="aaa">
+     <header class="masthead text-center">
+         <div class="row text-center">
+            <div class="container overflow-hidden">
+                <div class="row gx-5">
+                  <div class="col">
+                    <img src="{{ src }}" class="imgB p-3 border bg-light" alt="..."> 
+                  </div>
+                  <div class="col alert alert-primary col-6 mx-auto acard" role="alert">
+                    <h1 class="col-6 mx-auto display-4 text-center">{{ predictTypes }}</h1>
+                </div>
+                </div>
+              </div>
+              <br> <br> <br> 
+            <div class="text-center mt-4">
+                <a class="btn btn-xl btn-outline-light" href="#bbb">
+                    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    查看更多資訊
+                </a>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                <tr>
+                    <th colspan="2">The table header</th>
+                </tr>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in data %} <!--看 py 那的 data 有幾筆來決定-->
+                <tr>
+                    <td scope="row">
+                        {{ record[0] }}
+                    </td>
+                    <td scope="row">
+                        {{ record[1] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+</section>
+<section class="page-section bgColor1 mb-0" id="bbb"> 
+        
+
+        <!-- 預測出的類型回傳眼距圖片 --> 
+        
+        <div id="h1card">
+           <h2 class="text-uppercase mb-0"><i class="fa fa-star" aria-hidden="true"></i>你選擇的類別: {{ predictName }} 相似程度</h2>
+           </div>
+           <div class="width1">
+        <div class="row text-center" >   
+       <div class="card" id="acard" style="width: 18rem;">
+        <img src="{{ a3 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><p>眼距位置:{{ p3 }}</p></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </p>
+        </div>
+    </div>
+
+    <div class="card" id="acard" style="width: 18rem;">
+        <img src="{{ a1 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><p>鼻距位置:{{ p1 }}</p></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </p>
+        </div>
+    </div>
+
+    <div class="card" id="acard" style="width: 18rem;">
+        <img src="{{ a2 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><p>嘴距位置:{{ p2 }}</p></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </p>
+        </div>
+    </div>
+
+    <div class="card" id="acard" style="width: 18rem;">
+        <img src="{{ a4 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><p>??位置:{{ p4 }}</p></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </p>
+        </div>
+    </div>
+
+    <div class="card" id="acard" style="width: 18rem;">
+        <img src="{{ a5 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><p>??位置:{{ p5 }}</p></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </p>
+        </div>
+    </div>
+</div>
+</div>
+<!-- 選擇的類型回傳眼距圖片 -->  
+<br> <br> <br> 
+ <div id="h1card">
+    <h2 class="masthead-heading text-uppercase mb-0"><i class="fa fa-star" aria-hidden="true"></i>你選擇的類別: {{ predictName }} 與 預測出的結果: {{yourLikeTypes}} 相似程度</h2>
+</div>
+<div class="width1">
+<div class="row text-center imgboxC" > 
+      
+    <div class="card" id="acard" style="width: 18rem;">
+     <img src="{{ a8 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+     <div class="card-body">
+       <h5 class="card-title"><p>眼距位置:{{ p8 }}</p></h5>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     </p>
+     </div>
+ </div>
+
+ <div class="card" id="acard" style="width: 18rem;">
+     <img src="{{ a6 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+     <div class="card-body">
+       <h5 class="card-title"><p>鼻距位置:{{ p6 }}</p></h5>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     </p>
+     </div>
+ </div>
+
+ <div class="card" id="acard" style="width: 18rem;">
+     <img src="{{ a7 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+     <div class="card-body">
+       <h5 class="card-title"><p>嘴距位置:{{ p7 }}</p></h5>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     </p>
+     </div>
+ </div>
+
+ <div class="card" id="acard" style="width: 18rem;">
+     <img src="{{ a9 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+     <div class="card-body">
+       <h5 class="card-title"><p>??位置:{{ p9 }}</p></h5>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     </p>
+     </div>
+ </div>
+
+ <div class="card" id="acard" style="width: 18rem;">
+     <img src="{{ a10 }}" class="card-img-top rounded mx-auto d-block aWHcard" alt="...">
+     <div class="card-body">
+       <h5 class="card-title"><p>??位置:{{ p10 }}</p></h5>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     </p>
+     </div>
+ </div>
+</div>
+</div>
+    <br> <br> <br> 
+           <div class="text-center mt-4 padding1">
+               <a class="btn btn-xl btn-outline-light" href="uploadPhoto">
+                   <i class="fas fa-download me-2"></i>
+                   再測一次
+               </a>   
+               <a class="btn btn-xl btn-outline-light" href="#aaa">
+                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+            回到最上層
+        </a>
+           </div>
+   
+    </div>
+
+</header> 
+</section>
+<div class="copyright py-4 text-center text-white">
+    <div class="container"><small>Copyright &copy; BDSE2204 2022</small></div>
+</div>
+</body>
+</html>
+
